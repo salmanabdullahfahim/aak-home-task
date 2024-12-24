@@ -19,6 +19,7 @@ export const chartApi = createApi({
             });
           });
         });
+
         return result;
       },
     }),
