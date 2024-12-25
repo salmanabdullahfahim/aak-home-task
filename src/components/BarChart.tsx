@@ -36,9 +36,26 @@ const BarChart: React.FC = () => {
       },
     ],
   };
+
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-3">
-      {isLoading && <p>Loading...</p>}
+      <h2 className="text-2xl font-semibold mb-4 text-gray-700">
+        API Data Bar Chart
+      </h2>
+      {isLoading && (
+        <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl">
+          <div className="animate-pulse">
+            <div className="h6 bg-gray-300 rounded mb-4 w-1/2 mx-auto">
+              <div className="space-y-2">
+                {[...Array(7)].map((_, i) => (
+                  <div key={i} className="h-4 bg-gray-300 rounded w-full"></div>
+                ))}
+              </div>
+              <div className="h-40 bg-gray-300 rounded mt-6"></div>
+            </div>
+          </div>
+        </div>
+      )}
       {error && <p>Unable to fetch data.</p>}
       {data && (
         <div className="bg-white shadow-lg rounded-lg p-5 w-full max-w-2xl">
