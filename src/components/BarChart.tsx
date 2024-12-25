@@ -11,6 +11,7 @@ import {
   Tooltip,
 } from "chart.js";
 import SkeletonLoader from "./SkeletonLoader";
+import { options } from "../utils/BarOptions";
 
 ChartJs.register(
   CategoryScale,
@@ -47,7 +48,7 @@ const BarChart: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-black p-4">
-      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-gray-200">
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-9 text-gray-200">
         API Data Bar Chart
       </h1>
 
@@ -56,7 +57,13 @@ const BarChart: React.FC = () => {
         {error && <p className="text-red-500">Error: Unable to fetch data</p>}
 
         {/* Mani Bar Chart */}
-        {data && <Bar data={chartData} key={JSON.stringify(chartData)} />}
+        {data && (
+          <Bar
+            data={chartData}
+            key={JSON.stringify(chartData)}
+            options={options}
+          />
+        )}
       </div>
     </div>
   );
