@@ -37,11 +37,12 @@ const BarChart: React.FC = () => {
     ],
   };
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-3">
       {isLoading && <p>Loading...</p>}
+      {error && <p>Unable to fetch data.</p>}
       {data && (
-        <div>
-          <Bar data={chartData} />
+        <div className="bg-white shadow-lg rounded-lg p-5 w-full max-w-2xl">
+          <Bar data={chartData} key={JSON.stringify(chartData)} />
         </div>
       )}
     </div>
