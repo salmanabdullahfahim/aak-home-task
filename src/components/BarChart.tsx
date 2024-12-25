@@ -23,7 +23,7 @@ ChartJs.register(
 
 const BarChart: React.FC = () => {
   const { data, error, isLoading } = useGetChartDataQuery();
-  console.log(data);
+
   // map the data
   const chartData = {
     labels: data?.map((entry) => entry.date) || [],
@@ -46,15 +46,16 @@ const BarChart: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-50 p-4">
-      <h1 className="text-2xl font-bold mb-4 text-gray-800">
+    <div className="flex flex-col items-center justify-center h-screen bg-black p-4">
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-gray-200">
         API Data Bar Chart
       </h1>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl">
+      <div className=" rounded-lg p-6 w-full max-w-2xl">
         {isLoading && <SkeletonLoader />}
         {error && <p className="text-red-500">Error: Unable to fetch data</p>}
 
+        {/* Mani Bar Chart */}
         {data && <Bar data={chartData} key={JSON.stringify(chartData)} />}
       </div>
     </div>

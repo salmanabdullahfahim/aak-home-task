@@ -6,7 +6,7 @@ const SkeletonLoader: React.FC = () => {
       {[...Array(7)].map((_, i) => (
         <div
           key={i}
-          className="bg-gray-200 rounded w-16"
+          className="bg-gray-800 rounded w-16"
           style={{
             height: `${Math.random() * 100 + 180}px`,
           }}
