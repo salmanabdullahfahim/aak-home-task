@@ -1,6 +1,24 @@
 import React from "react";
 import { useGetChartDataQuery } from "../redux/api/chartApi";
 import { Bar } from "react-chartjs-2";
+import {
+  BarElement,
+  CategoryScale,
+  Chart as ChartJs,
+  Legend,
+  LinearScale,
+  Title,
+  Tooltip,
+} from "chart.js";
+
+ChartJs.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const BarChart: React.FC = () => {
   const { data, error, isLoading } = useGetChartDataQuery();
