@@ -24,6 +24,7 @@ ChartJs.register(
 const BarChart: React.FC = () => {
   const { data, error, isLoading } = useGetChartDataQuery();
   console.log(data);
+  // map the data
   const chartData = {
     labels: data?.map((entry) => entry.date) || [],
     datasets: [
