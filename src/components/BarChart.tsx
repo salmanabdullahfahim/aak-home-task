@@ -30,15 +30,22 @@ const BarChart: React.FC = () => {
       {
         label: "Value",
         data: data?.map((entry) => entry.value) || [],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: [
+          "#0066CC",
+          "#63993D",
+          "#00959a",
+          "#5E40BE",
+          "#f4c142",
+          "#ec7a08",
+        ],
+        borderColor: "rgba(0, 0, 0, 0.1)",
         borderWidth: 1,
       },
     ],
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-blue-800/10 p-4">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-50 p-4">
       <h1 className="text-2xl font-bold mb-4 text-gray-800">
         API Data Bar Chart
       </h1>
